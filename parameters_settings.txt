@@ -1,0 +1,27 @@
+𝛾                                               default.gamma
+Activation function                             agent.forward()
+Parameter sharing                               algorithm ending in "_ns"
+Optimiser                                       learner.__init__
+Maximum gradient norm                           default.grad_norm_clip
+Minimum 𝜖                                       alg.epsilon_finish
+Evaluation 𝜖                                    alg.evaluation_epsilon
+Learning rate                                   default.lr
+Target update frequency                         alg.target_update_interval_or_tau
+Replay buffer capacity (episodes)               alg.buffer_size (o default.buffer_size?)
+Batch size (episodes)                           default.batch_size
+
+QMIX
+Mixing embedding size                           qmix.mixing_embed_dim
+Hypernetwork embedding size                     qmix.hypernet_embed
+
+ALG
+Network architecture                            qmix.use_rnn
+Network size                                    default.hidden_dim
+Reward standardisation                          qmix.standardise_rewards (e standardise_return?)
+𝜖 decay steps                                   qmix.epsilon_anneal_time
+
+ALG-EMAX
+Network architecture                            qmix.use_rnn
+Network size                                    default.hidden_dim
+Reward standardisation                          qmix.standardise_rewards (e standardise_return?)
+UCB uncertainty coefficient 𝛽                   boh
