@@ -1,3 +1,5 @@
+timesteps                                       gymma.t_max
+
 𝛾                                               default.gamma
 Activation function                             agent.forward()
 Parameter sharing                               algorithm ending in "_ns"
