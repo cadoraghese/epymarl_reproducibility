@@ -113,7 +113,7 @@ class _GymmaWrapper(MultiAgentEnv):
             for o in self._obs
         ]
 
-        if type(reward) is list:
+        if type(reward) is list or type(reward) is np.ndarray:
             reward = sum(reward)
         if type(done) is list:
             done = all(done)
