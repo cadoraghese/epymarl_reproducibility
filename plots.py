@@ -120,6 +120,7 @@ ax1.set_ylabel("8p-1f", fontsize=F_SIZE)
 ax1.set_xlabel("IQL", fontsize=F_SIZE)
 ax2.set_xlabel("VDN", fontsize=F_SIZE)
 ax3.set_xlabel("QMIX", fontsize=F_SIZE)
+plt.savefig("img/lbf.png")
 
 # BPUSH
 bpush_data = [entry for entry in data if 'bpush' in entry['env']]
@@ -149,6 +150,7 @@ ax1.set_ylabel("Tiny", fontsize=F_SIZE)
 ax1.set_xlabel("IQL", fontsize=F_SIZE)
 ax2.set_xlabel("VDN", fontsize=F_SIZE)
 ax3.set_xlabel("QMIX", fontsize=F_SIZE)
+plt.savefig("img/bpush.png")
 
 # RWARE
 rware_data = [entry for entry in data if 'rware' in entry['env']]
@@ -186,6 +188,7 @@ ax1.set_ylabel("Large-4ag", fontsize=F_SIZE)
 ax1.set_xlabel("IQL", fontsize=F_SIZE)
 ax2.set_xlabel("VDN", fontsize=F_SIZE)
 ax3.set_xlabel("QMIX", fontsize=F_SIZE)
+plt.savefig("img/rware.png")
 
 # MPE
 mpe_data = [entry for entry in data if 'mpe' in entry['env']]
@@ -208,6 +211,6 @@ ax1.set_ylabel("Adversary", fontsize=F_SIZE)
 ax1.set_xlabel("IQL", fontsize=F_SIZE)
 ax2.set_xlabel("VDN", fontsize=F_SIZE)
 ax3.set_xlabel("QMIX", fontsize=F_SIZE)
-
+plt.savefig("img/mpe.png")
 
 plt.show()
