@@ -54,12 +54,14 @@ for alg in os.listdir("results/sacred"):
 #     plt.fill_between(steps, means - stds, means + stds, alpha=0.3)
 
 for entry in data:
-    entry['return_mean_steps'] = np.mean(entry['return_mean_steps'], axis=0)
-    entry['return_mean_std'] = np.std(entry['return_mean_values'], axis=0)
-    entry['return_mean_values'] = np.mean(entry['return_mean_values'], axis=0)
-    entry['test_return_mean_steps'] = np.mean(entry['test_return_mean_steps'], axis=0)
-    entry['test_return_mean_std'] = np.std(entry['test_return_mean_values'], axis=0)
-    entry['test_return_mean_values'] = np.mean(entry['test_return_mean_values'], axis=0)
+    min_len = min([len(x) for x in entry['return_mean_steps'] + entry['return_mean_values']])
+    entry['return_mean_steps'] = np.mean([x[:min_len] for x in entry['return_mean_steps']], axis=0)
+    entry['return_mean_std'] = np.std([x[:min_len] for x in entry['return_mean_values']], axis=0)
+    entry['return_mean_values'] = np.mean([x[:min_len] for x in entry['return_mean_values']], axis=0)
+    min_len = min([len(x) for x in entry['test_return_mean_steps'] + entry['test_return_mean_values']])
+    entry['test_return_mean_steps'] = np.mean([x[:min_len] for x in entry['test_return_mean_steps']], axis=0)
+    entry['test_return_mean_std'] = np.std([x[:min_len] for x in entry['test_return_mean_values']], axis=0)
+    entry['test_return_mean_values'] = np.mean([x[:min_len] for x in entry['test_return_mean_values']], axis=0)
 
 
 def plot_env(ax, data, env, alg):
